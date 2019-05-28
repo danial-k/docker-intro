@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS sdk
 WORKDIR /app
 COPY app /app
 # Publish source to output, used in next stage
-RUN dotnet publish --no-restore -c Release -o published
+RUN dotnet publish -c Release -o published
 
 # Stage 2 - create deployable image
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
