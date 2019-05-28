@@ -13,7 +13,7 @@ docker run \
 --hostname dotnetcore \
 --mount type=bind,src=`pwd`,dst=/app \
 --publish 3500-3505:5000-5005/tcp \
--w /app \
+-w //app \
 mcr.microsoft.com/dotnet/core/sdk:2.2 \
 bash
 ```
