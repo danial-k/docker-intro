@@ -44,7 +44,7 @@ From the ```dotnetcore/app``` path, run:
 ```
 docker build -t dotnetcore:1.0.0 .
 ```
-This will send all files in the current directory to the Docker daemon's build context, then create and tag the image.  Once the image has been built, run with:
+This will send all files in the current directory to the Docker daemon's build context  (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image.  Once the image has been built, run with:
 ```
 docker run -p 3510:80 dotnetcore:1.0.0
 ```
