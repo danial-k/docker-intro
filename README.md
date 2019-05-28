@@ -2,7 +2,7 @@
 This repository contains tutorials for developing with the following language/environments:
 - [C# .net core](dotnetcore)
 
-Each subdirectory in this project contains a Dockerfile for building a docker image after following through the examples.
+Each subdirectory in this project contains a Dockerfile for building a docker image after following each example.
 
 ## Developing in Docker
 In the following, you will need to:
