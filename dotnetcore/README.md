@@ -35,7 +35,7 @@ Build and run the project with hot-reload enabled:
 dotnet watch run
 ```
 
-The application should then be visible at http://127.0.0.1:3500.
+The application should then be visible at http://127.0.0.1:3500.  You should be able to modify source code and see the changes immediately.
 
 ## Building deployment container
 To publish the application as a self-contained image, we will use a multi-stage build process (see ```docker-intro/dotnetcore/Dockerfile```), to first build (based on the ```sdk``` image) and then produce a deployable image (based on the ```runtime``` image).
