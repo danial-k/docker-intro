@@ -51,3 +51,15 @@ mvn jetty:run
 ```
 
 The application should now be visible at http://127.0.0.1:3600.
+
+## Building deployment container
+To publish the application as a self-contained image, we will use a multi-stage build process (see the Dockerfile[Dockerfile] for this project (place in the maven directory). This Dockerfule will first build the source (using on the Maven image) and then produce a deployable image (based on the Jetty image):
+```
+docker build -t jsp-maven:1.0.0 .
+```
+
+This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image. Once the image has been built, run with:
+```
+docker run -p 3610:8080 jsp-maven:1.0.0
+```
+The application should now be visible at http://127.0.0.1:3610/app.
