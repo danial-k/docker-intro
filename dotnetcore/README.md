@@ -5,6 +5,7 @@ mkdir -p docker-intro/dotnetcore/app
 cd docker-intro/dotnetcore/app
 ```
 
+## Setting up development container
 Create a running development container using the .net core SDK image, with the host app directory mounted to the container ```/app``` folder and a range of ports exposed:
 ```
 docker run \
@@ -27,14 +28,16 @@ In this example, we will create an ASP.net core MVC web app.  Create a new proje
 ```
 dotnet new mvc --no-restore --no-https
 ```
-At this point you should be able to view the project source files in an IDE by browsing to the mounted path on the host (```docker-intro/dotnetcore/app```).
+At this point you should be able to view the project source files in an IDE by browsing to the mounted path on the host (```docker-intro/dotnetcore/app```).   Modify ```Properties/launchSettings.json``` and replace ```localhost``` with ```0.0.0.0```, per the solution [here](https://stackoverflow.com/questions/51188774/docker-dotnet-watch-run-error-unable-to-bind-to-https-localhost5000-on-the-i), otherwise the container will be unreachable.  If you've already ```run```, Terminate the process with ```Ctrl+C```, make the change and re-run.
 
 Build and run the project with hot-reload enabled:
 ```
 dotnet watch run
 ```
-One the application has started, you should be able to view the welcome page at http://127.0.0.1:3500.  If you receive IPV6 warnings or receive an empty response, modify ```Properties/launchSettings.json``` and replace ```localhost``` with ```0.0.0.0```, per the solution [here](https://stackoverflow.com/questions/51188774/docker-dotnet-watch-run-error-unable-to-bind-to-https-localhost5000-on-the-i) and restart the ```dotnet watch run``` command (```Ctrl + C```).
 
+The application should then be visible at http://127.0.0.1:3500.
+
+## Building deployment container
 To publish the application as a self-contained image, we will use a multi-stage build process (see ```docker-intro/dotnetcore/Dockerfile```), to first build (based on the ```sdk``` image) and then produce a deployable image (based on the ```runtime``` image).
 
 From the ```dotnetcore/app``` path, run:
