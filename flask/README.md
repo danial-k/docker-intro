@@ -1,8 +1,10 @@
 # Python Flask example
 Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
 
+```
 mkdir -p docker-intro/node/app
 cd docker-intro/node/app
+```
 
 # Setting up development container
 Start a Node development container with:
