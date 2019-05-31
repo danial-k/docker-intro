@@ -38,7 +38,8 @@
   </dependencies>
 
   <build>
-    <finalName>thorntail-example</finalName>
+    <!-- Note that -thorntail will be appended to finalName for uberjar -->
+    <finalName>example</finalName>
     <plugins>
       <plugin>
         <groupId>io.thorntail</groupId>
@@ -53,7 +54,7 @@
         </executions>
         <configuration>
           <properties>
-            <!-- Network config for Docker -->
+            <!-- Network config for Docker containers -->
             <swarm.bind.address>0.0.0.0</swarm.bind.address>
             <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
           </properties>
