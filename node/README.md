@@ -34,7 +34,7 @@ Create a new express application in the current directory:
 express
 ```
 
-Edit ```package.json``` and replace ```node ./bin/www``` in ```scripts.start``` with ```nodemon ./bin/www```.  This will use nodemon to monitor for file changes instead of node.  Note that on Windows hosts, ```--legacy-watch``` should be added (i.e. ```nodemon --legacy-watch ./bin/www```) because of a Windows file system [limitations](https://github.com/remy/nodemon#application-isnt-restarting).
+Edit ```package.json``` and replace ```node ./bin/www``` in ```scripts.start``` with ```nodemon ./bin/www```.  This will use nodemon to monitor for file changes instead of node.  Note that on Windows hosts, ```--legacy-watch``` should be added (i.e. ```nodemon --legacy-watch ./bin/www```) because of a Windows file system [limitation](https://github.com/remy/nodemon#application-isnt-restarting).
 
 To run the application with hot-reloading:
 ```
