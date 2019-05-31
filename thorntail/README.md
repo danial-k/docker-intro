@@ -17,7 +17,7 @@ maven:3.6-jdk-8 \
 bash
 ```
 
-Create a ```pom.xml``` file in the ```app``` directory, with the same content as the [pom.xml](app/pom.xml)from this repository.
+Create a ```pom.xml``` file in the ```app``` directory, with the same content as the [pom.xml](app/pom.xml) from this repository.
 
 Create the source directory:
 ```shell
