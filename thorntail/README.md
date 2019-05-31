@@ -1,11 +1,11 @@
 Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
-```
+```shell
 mkdir -p docker-intro/thorntail/app cd docker-intro/thorntail/app
 ```
 
 # Setting up a development container
 Create and connect to a Maven container:
-```
+```shell
 docker run \
 -it \
 --name thorntail \
@@ -20,12 +20,12 @@ bash
 Create a ```pom.xml``` file in the ```app``` directory, with the same content from this repository.
 
 Create the source directory:
-```
+```shell
 mkdir -p src/main/java/com/example/thorntail
 ```
 
 In this directory create ```RestApplication.java```, defining ```/rest``` as the root API path, with the following content:
-```
+```java
 package com.example.thorntail;
 
 import javax.ws.rs.core.Application;
@@ -38,7 +38,7 @@ public class RestApplication extends Application {
 
 Then create ```HelloWorldEndpoint.java``` with the following content, defining the ```/rest/hello``` endpoint
 
-```
+```java
 package com.example.thorntail;
 
 import javax.ws.rs.Path;
@@ -58,7 +58,7 @@ public class HelloWorldEndpoint {
 ```
 
 Run the application with the Maven thorntail plugin:
-```
+```shell
 mvn thorntail:run
 ```
 
