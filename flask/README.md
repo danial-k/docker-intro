@@ -26,7 +26,7 @@ pip install flask
 ```
 
 Create a new ```index.py``` file with the following content:
-```
+```python
 from flask import Flask
 application = Flask(__name__)
 
@@ -50,7 +50,7 @@ The application should then be available at http://127.0.0.1:3800.
 To publish the application as a self-contained image, use the Dockerfile[Dockerfile] for this project (placed outside the ```app``` directory). This image will use the production-grade gunicorn WSGI server as opposed to the flask development server.
 
 Create a WSGI entry point file ```wsgi.py```:
-```
+```python
 from index import application
 
 if __name__ == "__main__":
