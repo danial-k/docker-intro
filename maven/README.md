@@ -35,7 +35,7 @@ Move the contents of the generated project to the parent directory and remove th
 mv app/* . && rm -rf app
 ```
 The project source files should now be accessible to an IDE.  To run a Maven Jetty webserver, add the following to the project ```pom.xml``` under ```build.pluginManagement.plugins```:
-```
+```xml
 ...
 <plugin>
   <groupId>org.eclipse.jetty</groupId>
