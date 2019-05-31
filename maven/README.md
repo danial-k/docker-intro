@@ -1,12 +1,14 @@
 # Java JSP Jetty Maven Docker example
 Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
 
+```shell
 mkdir -p docker-intro/maven/app
 cd docker-intro/maven/app
+```
 
 # Setting up development container
 Start a Maven development container with:
-```
+```shell
 docker run \
 -it \
 --name maven \
@@ -19,7 +21,7 @@ bash
 ```
 
 Create an empty JSP application using Maven's Archetype generator:
-```
+```shell
 mvn archetype:generate \
 -DarchetypeGroupId=org.apache.maven.archetypes \
 -DarchetypeArtifactId=maven-archetype-webapp \
@@ -31,7 +33,7 @@ mvn archetype:generate \
 ```
 
 Move the contents of the generated project to the parent directory and remove the empty directory:
-```
+```shell
 mv app/* . && rm -rf app
 ```
 The project source files should now be accessible to an IDE.  To run a Maven Jetty webserver, add the following to the project ```pom.xml``` under ```build.pluginManagement.plugins```:
@@ -46,7 +48,7 @@ The project source files should now be accessible to an IDE.  To run a Maven Jet
 ```
 
 Run the web project with the Maven Jetty plugin:
-```
+```shell
 mvn jetty:run
 ```
 
@@ -54,12 +56,12 @@ The application should now be visible at http://127.0.0.1:3600.
 
 ## Building deployment container
 To publish the application as a self-contained image, we will use a multi-stage build process (see the Dockerfile[Dockerfile] for this project (place in the maven directory). This Dockerfule will first build the source (using on the Maven image) and then produce a deployable image (based on the Jetty image):
-```
+```shell
 docker build -t jsp-maven:1.0.0 .
 ```
 
 This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image. Once the image has been built, run with:
-```
+```shell
 docker run -p 3610:8080 jsp-maven:1.0.0
 ```
 The application should now be visible at http://127.0.0.1:3610/app.
