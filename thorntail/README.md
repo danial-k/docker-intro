@@ -1,6 +1,7 @@
 Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
 ```shell
-mkdir -p docker-intro/thorntail/app cd docker-intro/thorntail/app
+mkdir -p docker-intro/thorntail/app
+cd docker-intro/thorntail/app
 ```
 
 # Setting up a development container
