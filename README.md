@@ -1,5 +1,5 @@
 # Introduction to Docker for development
-This repository contains tutorials for developing with the following language/environments:
+This repository contains guides for developing minimal starter apps in the following language/environments:
 - [Python Flask](flask)
 - [C# ASP .net core](dotnetcore)
 - [Java JSP Maven](maven)
