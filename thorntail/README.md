@@ -1,3 +1,4 @@
+# Java Thorntail Maven Docker example
 Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
 ```shell
 mkdir -p docker-intro/thorntail/app
