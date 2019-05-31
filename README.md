@@ -3,6 +3,7 @@ This repository contains guides for developing minimal starter apps in the follo
 - [Python Flask](flask)
 - [C# ASP .net core](dotnetcore)
 - [Java JSP Maven](maven)
+- [Java Thorntail Maven](thorntail)
 - [Express NodeJS](node)
 
 Each subdirectory in this project contains a Dockerfile for building a docker image after following each example.
