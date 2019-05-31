@@ -64,3 +64,15 @@ mvn thorntail:run
 ```
 
 The running application should be visible at http://127.0.0.1:3800/rest/hello
+
+## Building deployment container
+To publish the application as a self-contained image, we will use a multi-stage build process (see the Dockerfile[Dockerfile] for this project (place in the maven directory). This Dockerfule will first build the source (using on the Maven image) and then produce a deployable image (based on the OpenJDK image):
+```shell
+docker build -t thorntail:1.0.0 .
+```
+
+This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image. Once the image has been built, run with:
+```shell
+docker run -p 3810:8080 thorntail:1.0.0
+```
+The application should now be visible at http://127.0.0.1:3810/rest/hello.
