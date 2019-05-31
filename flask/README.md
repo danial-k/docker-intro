@@ -1,14 +1,14 @@
 # Python Flask example
 Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
 
-```
+```shell
 mkdir -p docker-intro/node/app
 cd docker-intro/node/app
 ```
 
 # Setting up development container
-Start a Node development container with:
-```
+Start a Python development container with:
+```shell
 docker run \
 -it \
 --name flask \
@@ -21,7 +21,7 @@ bash
 ```
 
 Install flask using Python's package manager:
-```
+```shell
 pip install flask
 ```
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 ```
 
 To run the application with hot-reload enabled:
-```
+```shell
 FLASK_DEBUG=1 FLASK_APP=index.py flask run -h 0.0.0.0
 ```
 
@@ -57,12 +57,12 @@ if __name__ == "__main__":
     application.run()
 ```
 
-```
+```shell
 docker build -t flask:1.0.0 .
 ```
 
 This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image. Once the image has been built, run with:
-```
+```shell
 docker run -p 3810:5000 flask:1.0.0
 ```
 The application should then be available at http://127.0.0.1:3810
