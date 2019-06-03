@@ -115,11 +115,29 @@ Navigate to the ```projects``` page and select ```Import Project```.  In the Rep
 If using Postman, create a new collection and set basic auth options to ```admin``` and ```admin```.  In what follows, a number of requests will be made within this collection that will inherit authentication configuration information.
 ### Get server information
 - Type: ```GET```
-- URL: ```http://127.0.0.1:3920/kie-server/services/rest/server```
+- URL: http://127.0.0.1:3920/kie-server/services/rest/server
 - Headers: ```Accept```:```application/json```
 
 ### Get list of running KIE containers
-A KIE container is an isolated rule execution environment to allow multiple API clients to be served concurrently.  There is no relation between KIE containers and the underlying Docker container.
+A KIE container is an isolated rule execution environment (loaded kjar) to allow multiple API services (projects) to be served.  There is no relation between KIE containers and the underlying Docker container.
 - Type: ```GET```
-- URL: ```http://127.0.0.1:3920/kie-server/services/rest/server/containers```
+- URL: http://127.0.0.1:3920/kie-server/services/rest/server/containers
 - Headers: ```Accept```:```application/json```
+
+### Execute runtime commands
+- Type: ```POST```
+- URL: http://127.0.0.1:3920/kie-server/services/rest/server/containers/instances/app_1.0-SNAPSHOT
+- Body type: ```raw```
+- Content type: ```application/json```
+- Headers: ```Accept```:```application/json```
+- Body:
+```
+{
+  "commands" : [ {
+    "fire-all-rules": {
+        "max": -1,
+        "out-identifier": "firedActivations"
+    }
+  } ]
+}
+```
