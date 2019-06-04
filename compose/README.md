@@ -1,5 +1,5 @@
-# nginx reverse proxy Docker Compose example
-This example creates three nodes behind an nginx reverse proxy with path mapping.
+# NGINX reverse proxy Docker Compose example
+This example creates three nodes behind an NGINX reverse proxy with path mapping.
 
 ## Start services
 ```shell
