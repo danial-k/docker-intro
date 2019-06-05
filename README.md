@@ -6,7 +6,7 @@ This repository contains guides for developing minimal starter apps in the follo
 - [Java Thorntail Maven](thorntail)
 - [Java Drools Business Central](drools)
 - [Express NodeJS](node)
-- [C++ Maven gcc](maven)
+- [C++ Maven gcc](gradle)
 
 Each subdirectory in this project contains a Dockerfile for building a docker image after following each example.
 
