@@ -1,4 +1,4 @@
-#
+# C++ Maven gcc Docker example
 Create a Gradle container to generate a new project:
 ```shell
 docker run \
