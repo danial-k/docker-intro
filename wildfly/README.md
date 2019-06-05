@@ -24,6 +24,7 @@ The management console should then be visible at http://127.0.0.1:3951.
 Start a deployment in the management console and upload the WAR file from the ```target``` directory of the [Java Thorntail Maven](../master/thorntail/README.md) and [Java JSP Jetty Maven](../master/maven/README.md) examples.
 
 The application endpoints should be visible at http://127.0.0.1:3950/restful-endpoint/rest/hello and http://127.0.0.1:3950/app/.
+In the management console under ```Runtime``` > ```Server``` > ```JAX-RS``` The REST endpoints should be visible. 
 
 ## Monitoring requests
 Once deployed, under ```Runtime``` > ```Server``` > ```Web``` > ```Server``` > ```default-server``` > ```default```, enable statistics.
