@@ -4,7 +4,6 @@ This examples assumes completion of the [Java Thorntail Maven](../master/thornta
 Create a new WildFly container and enable the management console:
 ```shell
 docker run \
--it \
 --name wildfly \
 --hostname wildfly \
 -p 3950:8080 \
