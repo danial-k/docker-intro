@@ -19,3 +19,6 @@ For the examples:
 The following examples make use of Docker Compose:
 - [NGINX Reverse proxy](compose)
 - [Java Drools Business Central](drools)
+
+## Java application server examples
+- [Wildfly application server](wildfly)
