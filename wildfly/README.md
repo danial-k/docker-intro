@@ -1,4 +1,5 @@
 # Deploying Java WARs to WildFly application server
+This examples assumes completion of the [Java Thorntail Maven](../master/thorntail/README.md) and [Java JSP Jetty Maven](../master/maven/README.md) examples.
 
 Create a new WildFly container and enable the management console:
 ```shell
