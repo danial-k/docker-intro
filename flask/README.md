@@ -47,7 +47,7 @@ The application should then be available at http://127.0.0.1:3800.
 
 ## Building deployment container
 
-To publish the application as a self-contained image, use the Dockerfile[Dockerfile] for this project (placed outside the ```app``` directory). This image will use the production-grade gunicorn WSGI server as opposed to the flask development server.
+To publish the application as a self-contained image, use the [Dockerfile](Dockerfile) for this project (placed outside the ```app``` directory). This image will use the production-grade gunicorn WSGI server as opposed to the flask development server.
 
 Create a WSGI entry point file ```wsgi.py```:
 ```python
