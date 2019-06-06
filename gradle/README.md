@@ -56,7 +56,7 @@ To publish the application as a self-contained image with a Debian base image, u
 docker build -t gradle-gcc:1.0.0 .
 ```
 
-This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore) ), then create and tag the image. Once the image has been built, run with:
+This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image. Once the image has been built, run with:
 ```shell
 docker run gradle-gcc:1.0.0
 ```
