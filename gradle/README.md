@@ -1,4 +1,10 @@
 # C++ Gradle gcc Docker example
+Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
+```shell
+mkdir -p docker-intro/node/app
+cd docker-intro/node/app
+```
+
 Create a Gradle container to generate a new project:
 ```shell
 docker run \
@@ -44,12 +50,13 @@ Verify the output:
 ./build/exe/main/debug/app
 ```
 
-# Build image
+# Building deployment container
+To publish the application as a self-contained image with a Debian base image, use the (Dockerfile)[Dockerfile] for this project (placed outside the app directory):
 ```shell
 docker build -t gradle-gcc:1.0.0 .
 ```
 
-Run the application with:
+This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in (.dockerignore)[.dockerignore]), then create and tag the image. Once the image has been built, run with:
 ```shell
 docker run gradle-gcc:1.0.0
 ```
