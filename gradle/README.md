@@ -60,3 +60,4 @@ This will send all files in the current directory to the Docker daemon's build c
 ```shell
 docker run gradle-gcc:1.0.0
 ```
+The built application should then execute and terminate, followed by the container shutting down.
