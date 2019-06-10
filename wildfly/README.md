@@ -21,7 +21,7 @@ docker exec wildfly //opt/jboss/wildfly/bin/add-user.sh -u admin -p admin
 
 The management console should then be visible at http://127.0.0.1:3021.
 
-Start a deployment in the management console and upload ```example-thorntail.jar``` from the ```target``` directory of the [Java Thorntail Maven](../master/thorntail/README.md) example and ```app.war``` from the [Java JSP Jetty Maven](../master/maven/README.md) example.
+Start a deployment in the management console and upload ```example.war``` from the ```target``` directory of the [Java Thorntail Maven](../master/thorntail/README.md) example and ```app.war``` from the [Java JSP Jetty Maven](../master/maven/README.md) example.
 
 The application endpoints should be visible at http://127.0.0.1:3020/restful-endpoint/rest/hello and http://127.0.0.1:3020/app/.
 In the management console under ```Runtime``` > ```Server``` > ```JAX-RS``` The REST endpoints should also be listed. 
