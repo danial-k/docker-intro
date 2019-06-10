@@ -29,6 +29,6 @@ In the management console under ```Runtime``` > ```Server``` > ```JAX-RS``` The 
 ## Monitoring requests
 Once deployed, under ```Runtime``` > ```Server``` > ```Web``` > ```Server``` > ```default-server``` > ```default```, enable statistics.  To make 1000 requests to the endpoints run the following and monitor the WildFly webserver statistics:
 ```shell
-curl -s "http://127.0.0.1:3020/restful-endpoint/rest/hello/?[1-1000]"
-curl -s "http://127.0.0.1:3020/app/?[1-1000]"
+curl "http://127.0.0.1:3020/restful-endpoint/rest/hello/?[1-1000]"
+curl "http://127.0.0.1:3020/app/?[1-1000]"
 ```
