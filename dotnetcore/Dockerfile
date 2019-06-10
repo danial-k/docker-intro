@@ -5,7 +5,7 @@
 # For dotnet options see https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS sdk
 WORKDIR /app
-COPY app /app
+COPY app .
 # Publish source to output, used in next stage
 RUN dotnet publish -c Release -o published
 
