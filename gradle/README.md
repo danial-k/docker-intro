@@ -1,8 +1,10 @@
 # C++ Gradle gcc Docker example
-Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
+Clone this repository with ```git clone https://github.com/danial-k/docker-intro.git``` and open ```docker-intro/gradle``` in an ide.
+
+Alternatively, to skip cloning and use these instructions directly, create a new directory for this example:
 ```shell
-mkdir -p docker-intro/node/app
-cd docker-intro/node/app
+mkdir -p docker-intro/gradle
+cd docker-intro/gradle
 ```
 
 Create a Gradle container to generate a new project:
@@ -11,7 +13,7 @@ docker run \
 -it \
 --name gradle \
 --hostname gradle \
---mount type=bind,src=`pwd`,dst=/app \
+--mount type=bind,src=`pwd`/app,dst=/app \
 -w //app \
 gradle:5.4-jdk \
 bash
