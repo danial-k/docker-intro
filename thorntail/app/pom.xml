@@ -39,7 +39,7 @@
 
   <build>
     <!-- Note that -thorntail will be appended to finalName for uberjar -->
-    <finalName>example</finalName>
+    <finalName>restful-endpoint</finalName>
     <plugins>
       <plugin>
         <groupId>io.thorntail</groupId>
