@@ -1,8 +1,10 @@
 # Java Thorntail Maven Docker example
-Create a new directory for this example (or clone this repository with git clone https://github.com/danial-k/docker-intro.git):
+Clone this repository with ```git clone https://github.com/danial-k/docker-intro.git``` and open ```docker-intro/thorntail``` in an IDE.
+
+Alternatively, to skip cloning and use these instructions directly, create a new directory for this example:
 ```shell
-mkdir -p docker-intro/thorntail/app
-cd docker-intro/thorntail/app
+mkdir -p docker-intro/thorntail
+cd docker-intro/thorntail
 ```
 
 # Setting up a development container
@@ -12,8 +14,8 @@ docker run \
 -it \
 --name thorntail \
 --hostname thorntail \
---mount type=bind,src=`pwd`,dst=/app \
---publish 3800:8080/tcp \
+--mount type=bind,src=`pwd`/app,dst=/app \
+--publish 3015:8080/tcp \
 -w //app \
 maven:3.6-jdk-8 \
 bash
@@ -64,7 +66,7 @@ Run the application with the Maven thorntail plugin:
 mvn thorntail:run
 ```
 
-The running application should be visible at http://127.0.0.1:3800/rest/hello
+The running application should be visible at http://127.0.0.1:3015/rest/hello
 
 ## Building deployment container
 To publish the application as a self-contained image, we will use a multi-stage build process (see the Dockerfile[Dockerfile] for this project (place in the maven directory). This Dockerfule will first build the source (using on the Maven image) and then produce a deployable image (based on the OpenJDK image):
