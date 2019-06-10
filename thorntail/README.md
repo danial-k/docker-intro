@@ -21,7 +21,7 @@ maven:3.6-jdk-8 \
 bash
 ```
 
-Create a ```pom.xml``` file in the ```app``` directory, with the same content as the [pom.xml](app/pom.xml) from this repository.
+If you've cloned this project and just want to see the build process, you may skip to _Run the application with the Maven thorntail plugin_.  Otherwise, create a ```pom.xml``` file in the ```app``` directory, with the same content as the [pom.xml](app/pom.xml) from this repository.
 
 Create the source directory:
 ```shell
@@ -66,7 +66,7 @@ Run the application with the Maven thorntail plugin:
 mvn thorntail:run
 ```
 
-The running application should be visible at http://127.0.0.1:3015/rest/hello.  Although the application is functioning, it is not production optimised because of the base Maven image (~500 MB) it is running on.  For release, the application will be packaged as an uberjar (all dependecies bundled) and run as a regular ```java -jar``` process on a JRE base image.
+The running application should be visible at http://127.0.0.1:3015/rest/hello.  Although the application is functioning, it is not production optimised because of the base Maven image it is running on.  For release, the application will be packaged as an uberjar (all dependecies bundled) and run as a regular ```java -jar``` process on a JRE base image.
 
 ## Building deployment container
 To publish the application as a self-contained image, we will use a multi-stage build process (see the [Dockerfile](Dockerfile) for this project. This Dockerfile will first build the source (using on the Maven image) and then produce a deployable image (based on the OpenJDK JRE image):
@@ -74,7 +74,7 @@ To publish the application as a self-contained image, we will use a multi-stage 
 docker build -t thorntail:1.0.0 .
 ```
 
-This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image. With the exclusions specified, the build context is approximately 15KB, without which, it is approximately .  Once the image has been built, run with:
+This will send all files in the current directory to the Docker daemon's build context (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image. With the exclusions specified, the build context is approximately 15KB, without which, it is approximately 80MB.  Once the image has been built, run with:
 ```shell
 docker run -p 3016:8080 thorntail:1.0.0
 ```
