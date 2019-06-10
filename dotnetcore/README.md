@@ -1,5 +1,5 @@
 # C# ASP .net core Docker example
-Clone this repository with ```git clone https://github.com/danial-k/docker-intro.git```) and open ```docker-intro/dotnetcore``` in an ide.
+Clone this repository with ```git clone https://github.com/danial-k/docker-intro.git``` and open ```docker-intro/dotnetcore``` in an ide.
 
 Alternatively, to skip cloning and use these instructions directly, create a new directory for this example:
 ```shell
