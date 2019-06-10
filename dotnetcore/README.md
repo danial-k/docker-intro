@@ -40,9 +40,12 @@ Build and run the project with hot-reload enabled:
 dotnet watch run
 ```
 
-The application should then be visible at http://127.0.0.1:3004.  You should be able to modify source code and see the changes immediately.
+The application should then be visible at http://127.0.0.1:3004.  You should be able to modify source code and see the changes immediately.  For example, modify ```Views/Home/index.cshtml``` to update the rendered view, and add a nuget package (in a new terminal with ```docker exec -it bash```) using:
+```
+dotnet add package NUnit
+```
 
-Although the application is functional, the current state is not suitable for production because of file watching, debugging tools and the [sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk/) base image (~1.7 GB).  To optimise the application, the following will connect a new terminal to the running container and output a production-optimised build of the app to a ```published``` folder that can be run on an [aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) image (~260 MB):
+Although the application is functional, the current state is not suitable for production because of file watching, debugging tools and the [sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk/) base image (~1.7 GB).  To optimise for deployment, the following will connect a new terminal to the running container and output a production-optimised build of the app to a ```published``` folder that can be run on an [aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) image (~260 MB):
 
 ```
 docker exec -it dotnetcore bash
