@@ -63,6 +63,7 @@ public class HelloWorldEndpoint {
 
 Run the application with the Maven thorntail plugin:
 ```shell
+mvn package
 mvn thorntail:run
 ```
 
