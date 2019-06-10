@@ -21,19 +21,14 @@ docker exec wildfly //opt/jboss/wildfly/bin/add-user.sh -u admin -p admin
 
 The management console should then be visible at http://127.0.0.1:3021.
 
-Start a deployment in the management console and upload ```example.war``` from the ```target``` directory of the [Java Thorntail Maven](../master/thorntail/README.md) example and ```app.war``` from the [Java JSP Jetty Maven](../master/maven/README.md) example.
+Start a deployment in the management console and upload ```.war``` from the ```target``` directory of the [Java Thorntail Maven](../master/thorntail/README.md) example and ```app.war``` from the [Java JSP Jetty Maven](../master/maven/README.md) example.
 
 The application endpoints should be visible at http://127.0.0.1:3020/restful-endpoint/rest/hello and http://127.0.0.1:3020/app/.
 In the management console under ```Runtime``` > ```Server``` > ```JAX-RS``` The REST endpoints should also be listed. 
 
 ## Monitoring requests
-Once deployed, under ```Runtime``` > ```Server``` > ```Web``` > ```Server``` > ```default-server``` > ```default```, enable statistics.
-Create a new CentOS container and execute multiple cURL requests against the WildFly application server:
+Once deployed, under ```Runtime``` > ```Server``` > ```Web``` > ```Server``` > ```default-server``` > ```default```, enable statistics.  To make 1000 requests to the endpoints run the following and monitor the WildFly webserver statistics:
 ```shell
-docker run -it centos
-```
-In this container run the following and monitor the WildFly webserver statistics:
-```shell
-curl -s "http://<wildfly-docker-ip>:8080/app/?[1-1000]"
-curl -s "http://<wildfly-docker-ip>:8080/resfult-endpoint/rest/hello/?[1-1000]"
+curl -s "http://127.0.0.1:3020/restful-endpoint/rest/hello/?[1-1000]"
+curl -s "http://127.0.0.1:3020/app/?[1-1000]"
 ```
