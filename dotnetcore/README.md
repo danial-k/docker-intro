@@ -59,7 +59,9 @@ From the ```dotnetcore/app``` path, run:
 ```
 docker build -t dotnetcore:1.0.0 .
 ```
-This will send all files in the current directory to the Docker daemon's build context  (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image.  Once the image has been built, run with:
+This will send all files in the current directory to the Docker daemon's build context  (excluding paths specified in [.dockerignore](.dockerignore)), then create and tag the image.  Note that the build context is approximately 4 MB, however if the .dockerignore file is removed, this will increase to about 11 MB as build outputs during development will also be included.  It is desirable to minimise the payload sent to the build context.
+
+Once the image has been built, run with:
 ```shell
 docker run -p 3006:80 dotnetcore:1.0.0
 ```
