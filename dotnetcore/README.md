@@ -1,8 +1,10 @@
 # C# ASP .net core Docker example
-Create a new directory for this example (or clone this repository with ```git clone https://github.com/danial-k/docker-intro.git```):
+Clone this repository with ```git clone https://github.com/danial-k/docker-intro.git```) and open ```docker-intro/dotnetcore``` in an ide.
+
+Alternatively, to skip cloning and use these instructions directly, create a new directory for this example:
 ```shell
-mkdir -p docker-intro/dotnetcore/app
-cd docker-intro/dotnetcore/app
+mkdir -p docker-intro/dotnetcore
+cd docker-intro/dotnetcore
 ```
 
 ## Setting up development container
@@ -12,7 +14,7 @@ docker run \
 -it \
 --name dotnetcore \
 --hostname dotnetcore \
---mount type=bind,src=`pwd`,dst=/app \
+--mount type=bind,src=`pwd`/app,dst=/app \
 --publish 3004:5000/tcp \
 --publish 3005:80/tcp \
 -w //app \
