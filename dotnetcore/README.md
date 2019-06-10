@@ -55,7 +55,7 @@ The production-optimised application should now be visible at http://127.0.0.1:3
 ## Building deployment container
 To publish the application as a self-contained production-optimised image, we will use a multi-stage build process (see the [Dockerfile](Dockerfile) for this project (place in the ```dotnetcore``` directory).  This Dockerfile will first build the source (using the [sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk/) image) and then produce a deployable image (based on the [aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) image).
 
-From the ```dotnetcore/app``` path, run:
+From the ```dotnetcore``` path and in a new terminal window, run:
 ```
 docker build -t dotnetcore:1.0.0 .
 ```
