@@ -4,9 +4,9 @@ This repository contains guides for developing minimal starter apps in the follo
 - [C# ASP .net core](dotnetcore)
 - [Java JSP Maven](maven)
 - [Java Thorntail Maven](thorntail)
-- [Java Drools Business Central](drools)
 - [Express NodeJS](node)
 - [C++ Gradle gcc](gradle)
+- [Wildfly application server](wildfly)
 
 Each subdirectory in this project contains a Dockerfile for building a docker image after following each example.
 
@@ -15,11 +15,3 @@ For the examples:
 - In the event of port conflicts, use different ports to those specified in the examples.
 - If using git bash for windows (MINIGW64), you may need to use ```//``` instead of ```/``` in the workdir parameter (```-w```) and prefix docker commands with ```winpty```.
 - If using Chrome and you received the error ```ERR_UNSAFE_PORT```, use a different port.
-
-## Docker compose examples
-The following examples make use of Docker Compose:
-- [NGINX Reverse proxy](compose)
-- [Java Drools Business Central](drools)
-
-## Java application server examples
-- [Wildfly application server](wildfly)
