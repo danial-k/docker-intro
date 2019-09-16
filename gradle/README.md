@@ -15,7 +15,7 @@ docker run \
 --hostname gradle \
 --mount type=bind,src=`pwd`/app,dst=/app \
 -w //app \
-gradle:5.4-jdk \
+gradle:5.4-jdk8 \
 bash
 ```
 
