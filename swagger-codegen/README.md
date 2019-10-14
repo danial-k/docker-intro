@@ -24,7 +24,7 @@ Two paths should be (bind) mounted to the Docker image:
 2. The output directory on the host into which the project will be generated
 
 Assuming you are in directory that has both an ```openapi.json``` file and a directory titled ```output```, the following command will generate the project using the specification file.
-Replace ```<YOUR_LANG_HERE``` with one of the available languages/framweworks (see next section), e.g. ```spring```.
+Replace ```<YOUR_LANG_HERE>``` with one of the available languages/framweworks (see next section), e.g. ```spring```.
 Note that ```//``` allows running on Docker for Windows and Linux/MacOS.
 ```shell
 docker run --rm \
