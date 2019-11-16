@@ -17,11 +17,13 @@ docker build \
 ```
 
 To start Docker image:
+```shell
 docker run -p 8003:80 my-react-app:0.0.1
+```
 
 ## Development
 To start the development server (assuming node):
-```
+```shell
 PORT=3200 REACT_APP_API_URL=http://127.0.0.1:3000 npm run start
 ```
 Where ```PORT``` is the port for the development server, ```API_URL``` is the location of the backend.
