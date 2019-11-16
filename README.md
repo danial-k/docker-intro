@@ -7,6 +7,7 @@ This repository contains guides for developing minimal starter apps in the follo
 - [Express NodeJS](node)
 - [C++ Gradle gcc](gradle)
 - [Wildfly application server](wildfly)
+- [React](react)
 
 Each subdirectory in this project contains a Dockerfile for building a docker image after following each example.
 
