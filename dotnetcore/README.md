@@ -3,7 +3,7 @@ Clone this repository with ```git clone https://github.com/danial-k/docker-intro
 
 Alternatively, to skip cloning and use these instructions directly, create a new directory for this example:
 ```shell
-mkdir -p docker-intro/dotnetcore
+mkdir -p docker-intro/dotnetcore/app
 cd docker-intro/dotnetcore
 ```
 
