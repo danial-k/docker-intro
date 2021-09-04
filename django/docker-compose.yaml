@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  # Postgres database
+  postgres:
+    image: "postgres:11"
+    environment:
+      POSTGRES_USER: "app"
+      POSTGRES_PASSWORD: "app"
+    ports:
+      - "10110:5432"
+  # Production wsgi app built using Dockerfile
+  app:
+    build:
+      context: "."
+    depends_on:
+      - "postgres"
+    ports:
+      - "10111:8000"
+  # Development app
+  app-dev:
+    build:
+      context: "."
+    depends_on:
+      - "postgres"
+    ports:
+      - "10112:8000"
+    volumes:
+      - type: "bind"
+        source: "."
+        target: "/app"
+    working_dir: "/app"
+    tty: true
+    command: bash
